@@ -1,0 +1,54 @@
+# Local credentials
+.env
+.env.*
+!.env.example
+.envrc
+model/local_credentials.py
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and uv
+.venv/
+.venv-sglang/
+venv/
+env/
+ENV/
+.uv/
+uv.lock
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Test coverage
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Generated experiment data and logs
+local_data
+/cabra-sandboxed-results.tar
+launch_all_experiments.sh
+*.jsonl
+*.jsonl.gz
+*.log
+*.zip
+
+# Notebook and editor artifacts
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db

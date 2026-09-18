@@ -1,0 +1,73 @@
+# Merge codebases task sweep config. Sourced by scripts in this directory.
+
+experiment_name: merge_codebases
+run_name: merge_codebases
+
+# Data locations, relative to the repository root.
+tasks_root: local_data/tasks
+response_dir: local_data/responses
+output_root: local_data/results
+prompt_file: data/tasks/merge_code/prompt.txt
+
+# Task generation sweep config.
+n:
+  - 5
+  - 10
+  - 25
+  - 50
+  - 100
+  - 200
+d:
+  - 1
+num_params:
+  - 10
+min_block:
+  - 2
+seed:
+  - 42
+num_examples:
+  - 50
+max_resample_attempts:
+  - 100
+
+# Generator behavior.
+overwrite: false
+"yes": false
+
+# Agent / score config.
+limit: 20
+n_parallel: 5
+input_field: input
+retry_errors: true
+dry_run: false
+num_tests: 20
+score_seed: 42
+timeout_seconds: 5
+max_failures: 5
+
+# Models for agent.sh. Scored as copilot/${model}.
+copilot_models:
+  - claude-sonnet-4.6
+  - claude-opus-4.7
+  - gpt-5.5
+  - gpt-5.4-mini
+  - gemini-3.1-pro-preview
+  - gemini-3.5-flash
+
+# Models for llm.sh. Scored as code/${model}.
+models:
+  - openrouter/openai/gpt-5.3-codex
+  - openrouter/x-ai/grok-4.3
+  - openrouter/openai/gpt-5
+  - openrouter/deepseek/deepseek-v3.2
+  - openrouter/openai/gpt-oss-120b
+  - openrouter/mistralai/mistral-large-2512
+  - openrouter/openai/gpt-5.4-mini
+  - openrouter/openai/gpt-5.5
+
+# Allowed synonym transformations + perturbations
+allowed_transformations:
+  - [rename_variables, shuffle_lines, multi_lines, reorder, logical_equiv]
+
+# allowed_perturbations:
+#   - [swap_factor, flip_sign, change_coeff, add_factor]

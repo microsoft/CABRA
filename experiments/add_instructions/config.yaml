@@ -1,0 +1,71 @@
+# Per-experiment config. Sourced by every script in this directory.
+
+experiment_name: add_instructions
+
+# Constraint/add-instructions task config.
+task_set_name:
+  - math_mult_constraints
+  - array_constraints
+  - string_constraints
+task_types:
+  - add_parameter
+  - add_return_value
+  - cache_function
+  - extract_helper
+
+# Data locations.
+dag_dir: local_data/dag
+tasks_root: local_data/tasks
+test_cases_root: local_data/test_cases
+response_dir: local_data/responses
+output_root: local_data/results
+
+# Run config.
+limit: 20
+n_parallel: 5
+num_dags: 20
+seed: 42
+
+# DAG structure parameters: fixed starting DAG, n=10.
+variable_names: symbolic
+force_code_single_entry: true
+force_edit_single_entry: true
+
+bucket_mode: single
+buckets:
+  num_nodes: [[10, 10]]
+  depth_breadth_prop: [[0.45, 0.55]]
+  prob_same_layer: [[0.9, 0.9]]
+  code_extra_edge: [[0.3, 0.3]]
+  edit_extra_edge: [[0.3, 0.3]]
+  attach: [[0.3, 0.3]]
+  attach_prob_same_layer: [[0.9, 0.9]]
+  code_entry: [[1, 1]]
+  edit_entry: [[1, 1]]
+
+# Add-instructions sweep: many all-functions requirements.
+constraint_bucket_mode: nested
+num_params: 10
+constraint_buckets:
+  num_constraints: [[5, 5], [10, 10], [25, 25], [50, 50], [100, 100], [200, 200]]
+  depth_breadth_prop: [[0.0, 0.0]]
+
+# Models for llm.sh. Scored as code/${model}.
+models:
+  - openrouter/openai/gpt-5.3-codex
+  - openrouter/x-ai/grok-4.3
+  - openrouter/openai/gpt-5
+  - openrouter/deepseek/deepseek-v3.2
+  - openrouter/openai/gpt-oss-120b
+  - openrouter/mistralai/mistral-large-2512
+  - openrouter/openai/gpt-5.4-mini
+  - openrouter/openai/gpt-5.5
+
+# Models for agent.sh. Scored as copilot/${model}.
+copilot_models:
+  - claude-sonnet-4.6
+  - claude-opus-4.7
+  - gpt-5.5
+  - gpt-5.4-mini
+  - gemini-3.1-pro-preview
+  - gemini-3.5-flash

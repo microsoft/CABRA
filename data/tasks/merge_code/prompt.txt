@@ -1,0 +1,40 @@
+CalculateA and CalculateB are subclasses of the shared Calculate class. Their compute() methods contain redundant logic. Refactor the code using the template method pattern: move as much identical compute() logic as possible into Calculate.compute(), extract subclass-specific behavior into helper methods with the name custom_compute_{idx}, and keep only the differences in CalculateA and CalculateB.
+
+For example, if you were given the following code block:
+<example>
+class Calculate:
+    pass
+
+class CalculateA(Calculate):
+    def compute(self, a: int) -> int:
+        b = a * 2
+        c = b + 3
+        return c * 10
+
+class CalculateB(Calculate):
+    def compute(self, c: int) -> int:
+        a = 2 * c
+        b = a - 1
+        return b * 10
+</example>
+
+You should modify the code such that Calculate.compute() contains the shared control flow and shared operations. The child classes should only implement the custom part that differs between them:
+<output>
+class Calculate:
+    def compute(self, val_0: int) -> int:
+        val_1 = val_0 * 2
+        val_2 = self.custom_compute_1(val_1)
+        return val_2 * 10
+
+class CalculateA(Calculate):
+    def custom_compute_1(self, val: int) -> int:
+        return val + 3
+
+class CalculateB(Calculate):
+    def custom_compute_1(self, val: int) -> int:
+        return val - 1
+</output>
+
+You may need to repeat this process multiple times with multiple custom_comput_{idx}() functions if there are multiple identical regions and multiple smaller differences inside compute(). The final Calculate.compute() method should contain all shared logic and call child class-specific helper methods only where CalculateA and CalculateB differ.
+
+You must preserve the behavior of CalculateA.compute() and CalculateB.compute(). You MUST keep CalculateA and CalculateB as subclasses of Calculate. You CANNOT add new imports or unrelated classes. You may add helper methods to Calculate, CalculateA, and CalculateB as needed. Do not rename Calculate, CalculateA, CalculateB, or any public methods used outside these classes. Keep as few lines of code as possible in the child class functions custom_compute_{idx}; only subclass-specific differences should remain there.

@@ -1,0 +1,30 @@
+[project]
+name = "Code-Complexity-Evaluation"
+version = "0.1.0"
+description = "A project to evaluate how coding agents handle different levels of code complexity"
+requires-python = ">=3.13"
+dependencies = [
+    "networkx",
+    "matplotlib",
+    "tqdm",
+    "streamlit",
+    "pyvis",
+    "wordfreq",
+    "nltk",
+    "pytest",
+    "litellm",
+    "openai",
+    "azure-identity",
+    "statsmodels",
+    "openpyxl>=3.1.5",
+    "notebook",
+    "jupyterlab",
+    "starlette<1.4",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
