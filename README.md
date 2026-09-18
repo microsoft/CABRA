@@ -17,7 +17,7 @@ Across 6,840 tasks, we evaluate eight LLMs and six model configurations of the C
 ---
 
 ## 🔗 Links
-Released results files are available at the project's Hugging Face dataset: [link anonymized]
+Released results files are available at the project's Hugging Face dataset: Coming soon :)
 
 Download the contents of the dataset into `CABRA/local_data/`.
 
@@ -357,6 +357,9 @@ When reporting results, disclose the evaluated model and agent versions, tool ac
 
 
 
-### Contact
+### Trademarks
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow Microsoft's Trademark & Brand Guidelines. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
 
-[anonymized]
+### Contact
+This research was conducted by members of Microsoft Research. For questions, feedback, collaboration, or reports of unexpected behavior, contact Nishant Balepur (nishantbalepur@gmail.com), Tobias Schnabel (Tobias.Schnabel@microsoft.com), and Kiran Tomlinson (kitomlinson@microsoft.com).
+If the team receives reports of undesired behavior or identifies issues independently, we will update this repository with appropriate mitigations.
