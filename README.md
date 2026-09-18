@@ -7,7 +7,7 @@ This repository contains the code, tasks, experiment configurations, and analysi
 </h3>
 
 <p align="center">
-  <img src="images/cabra.png" alt="CABRA" width="25%">
+  <img src="images/cabra.png" alt="CABRA" width="50%">
 </p>
 
 **CABRA** (**C**oding **A**bility **B**lueprint for **R**igorous **A**gent evaluation) is a synthetic task framework for diagnosing coding agent abilities under controlled levels of task complexity. CABRA generates code-editing tasks from directed acyclic function call graphs and scales them along four axes: function traversal, function search, runtime resolution, and instruction following.
