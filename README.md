@@ -64,7 +64,7 @@ Based on these task results, we also design a **Merge Codebases** task to stress
 
 CABRA requires Python 3.13 or later and uses [`uv`](https://docs.astral.sh/uv/) for environment and dependency management.
 
-Use Linux (or WSL2 on Windows) with Bash and `tmux` installed. Scoring uses Unix-only signals and does not support native Windows Python. Copilot evaluation also requires a running Docker daemon accessible to your user. Run the commands below from the repository root.
+Use Linux (or WSL2 on Windows) with Bash and `tmux` installed. Copilot evaluation also requires a running Docker daemon accessible to your user. Run the commands below from the repository root.
 
 Local tool-call classification additionally requires a CUDA-compatible SGLang installation in `.venv-sglang/`; `uv sync` does not create this environment. Follow the [SGLang installation guide](https://docs.sglang.io/get_started/install.html). The supplied server script uses two GPUs (`--dp-size 2`); adjust it for your hardware. Downloaded-result plotting does not require Docker or GPUs.
 
