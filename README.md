@@ -244,15 +244,16 @@ If SGLang classification fails after retries, the classifier uses `openrouter/op
 
 ### Recreating plots
 
-Before running [`analysis/Analysis.ipynb`](analysis/Analysis.ipynb), generate its compact tool-call token summary if it is not included in your download:
+Run [`analysis/Analysis.ipynb`](analysis/Analysis.ipynb) and [`analysis/sandbox_comparison.ipynb`](analysis/sandbox_comparison.ipynb) after downloading released results as specified above. Run the notebook with `analysis/` as its working directory.
 
+Note: the analysis notebook uses a summary file of tool call token counts, which can be generated from your own runs with:
 ```bash
 uv run python -m analysis.summarize_tool_call_tokens \
   --tool-call-root local_data/tool_call_results \
   --traces-root local_data/copilot_traces
 ```
 
-Set `--traces-root` to your extracted trace directory containing per-session `events.jsonl` or `events.jsonl.gz` files. The script combines classified calls with trace token usage and writes `local_data/tool_call_results/tool_call_token_counts.jsonl`; the notebook reads this summary rather than raw traces. Keep experiment scores under `local_data/results/` and run the notebook with `analysis/` as its working directory to recreate the plots.
+Between running our original and sandboxed runs, the Copilot CLI changed how token counts are recorded; code may need to be adapted for future compatibility.
 
 ---
 
