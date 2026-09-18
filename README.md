@@ -141,8 +141,6 @@ Choose models in each experiment's `config.yaml`. The default model lists are:
 
 Check the [OpenRouter catalog](https://openrouter.ai/models) for current availability and pricing before a large run. Model versions and hosting providers may differ from those used for the published results.
 
-The LLM backend defaults to GPT-5.4 Mini when no model is specified. All supplied OpenRouter models use Chat Completions, including Codex. CABRA defaults to medium reasoning effort for the listed GPT and Grok models, enables reasoning for DeepSeek V3.2, and sends no reasoning setting for Mistral Large 3. Explicit request settings override these defaults; for example, pass `--agent-kwargs reasoning_effort=high` to a Python runner for a model supporting that effort level.
-
 Model IDs determine response and result paths. Configure Copilot runs separately with `copilot_models` and `COPILOT_GITHUB_TOKEN`, using model names supported by the Copilot CLI.
 
 #### Other Providers
