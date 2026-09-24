@@ -18,7 +18,7 @@ Across 6,840 tasks, we evaluate eight LLMs and six model configurations of the C
 ---
 
 ## 🔗 Links
-Released results files are available at the project's Hugging Face dataset: Coming soon :)
+Released results files are available at the project's Hugging Face dataset: https://huggingface.co/datasets/microsoft/CABRA.
 
 Download the contents of the dataset into `CABRA/local_data/`.
 
