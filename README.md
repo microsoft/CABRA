@@ -72,7 +72,7 @@ Local tool-call classification additionally requires a CUDA-compatible SGLang in
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/microsoft/CABRA.git
 cd CABRA
 ```
 
