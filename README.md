@@ -1,14 +1,15 @@
 # 🐐 CABRA: Code Understanding is a Bottleneck for Coding Agents 
-
-This repository contains the code, tasks, experiment configurations, and analysis for **CABRA**, introduced in:
-
-<h3 align="center">
-  <em>Code Understanding is a Bottleneck for Coding Agents</em>
-</h3>
-
 <p align="center">
   <img src="images/cabra.png" alt="CABRA" width="50%">
 </p>
+
+This repository contains the code, tasks, experiment configurations, and analysis for **CABRA**, introduced in:
+
+> Code Understanding is a Bottleneck for Coding Agents</br>
+> Nishant Balepur, Kiran Tomlinson, and Tobias Schnabel</br>
+> 2026
+
+
 
 **CABRA** (**C**oding **A**bility **B**lueprint for **R**igorous **A**gent evaluation) is a synthetic task framework for diagnosing coding agent abilities under controlled levels of task complexity. CABRA generates code-editing tasks from directed acyclic function call graphs and scales them along four axes: function traversal, function search, runtime resolution, and instruction following.
 

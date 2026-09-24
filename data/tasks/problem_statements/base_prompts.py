@@ -42,55 +42,6 @@ You CANNOT add new functions, imports, or variables outside of the provided func
 
 # -----------------------------------------------------------
 
-# PROMPT_ADD_PARAMETER = """
-# In solution.py, some functions need to apply a multiplier as a correction term. You should apply the following procedure recursively: for any function with a second parameter `mult` that returns some expression X, make it return mult * X and have it pass `mult` as a parameter to every function called in X. This will require adding `mult` to the parameter signatures of any function called to compute X with a default value of `mult: float = default()`, and then recursively applying the above rule to those functions.
-
-# For example, if you were given the following code block:
-# <example>
-# from mylibrary import default
-
-# def a(val: float) -> float:
-#     return b(val)
-
-# def b(val: float, mult: float = default()) -> float:
-#     return c(val)
-    
-# def c(val: float) -> float:
-#     return val
-    
-# def main(val: float):
-#     return a(val)
-    
-# if __name__ == '__main__':
-#     main(float(sys.argv[1]))
-# </example>
-
-# You should modify the code such that a() is unchanged, and b() multiplies its return value by `mult`. Then, since b() calls c(), you should pass the `mult` parameter to c(), and modify the call signature of c() to accept `mult` with a default value of 1.0. Then, c() would repeat this process recursively.
-# <output>
-# from mylibrary import default
-# def a(val: float) -> float:
-#     return b(val)
-
-# def b(val: float, mult: float = default()) -> float:
-#     return mult * c(val, mult=mult)
-    
-# def c(val: float, mult: float = default()) -> float:
-#     return mult * val
-    
-# def main(val: float):
-#     return a(val)
-    
-# if __name__ == '__main__':
-#     main(float(sys.argv[1]))
-# </output>
-
-# You must follow this procedure exactly; adding function parameters or returning values that diverge from what we specify will cause your solution to be marked incorrect automatically.
-
-# Do NOT modify functions that are upstream of the function that already has the mult parameter. In the example above, a() is unchanged.
-
-# default() and mylibrary are undefined and will be defined later; do not try to define them. You CANNOT add new functions, imports, or variables outside of the provided functions. You MUST preserve all function names (do not rename them). You may define variables within functions. Do not change the "__main__" block or main() function. The code may change; do not assume that any default values will persist.
-# """.strip()
-
 PROMPT_ADD_PARAMETER = """
 For any function in solution.py with the parameter mult, recursively propagate mult down the call graph by passing it to every function call used to compute the return expression. This will require adding mult to the parameter signatures of any called functions with a default value of `mult: float = default()`, and then recursively applying the same transformation to those functions. Continue propagating mult until reaching terminal functions whose return expressions directly compute a value `X` and do not call other functions in the file (apart from library functions). Only those terminal functions should apply the multiplier by returning mult * X; intermediate functions should NOT multiply their results by mult.
 

@@ -396,53 +396,6 @@ def add_default_parameter_to_functions(
     ast.fix_missing_locations(tree)
     return _unparse(tree)
 
-# FUNCTION_TO_PERTURBATION = {}
-
-# "gets a random expression from a list of variables"
-# def sample_expression(variables: list[str], rng: random.Random) -> str:
-    
-#     if len(variables) == 1:
-#         v = variables[0]
-#         return f"(not {v})" if rng.random() < 0.3 else v
-
-#     vars_ = variables[:]
-#     rng.shuffle(vars_)
-
-#     split = rng.randint(1, len(vars_) - 1)
-#     left = sample_expression(vars_[:split], rng)
-#     right = sample_expression(vars_[split:], rng)
-
-#     op = rng.choice(["and", "or", "^"])
-#     return f"({left} {op} {right})"
-
-# def sample_equivalent_expression(expression: str, num_expressions: int, rng: random.Random) -> str:
-#     pass
-
-# def sample_if_statement(rng, program: ProgramParams):
-    
-#     if program.if_type == "none":
-#         return None
-#     elif program.if_type == "fixed":
-#         return "if val > 0:"
-#     elif program.if_type == "swap":
-#         return "if val < 0:"
-#     elif program.if_type == "expression":
-#         return f"if val {rng.choice(['<', '>', '<=', '>='])} {rng.randint(1, 100)}:"
-#     elif program.if_type == "equivalence":
-#         return f"if val == {rng.randint(1, 100)}:"
-#     else:
-#         raise ValueError("Invalid if type. Must be 'none', 'fixed', 'swap', 'expression', or 'equivalence'.")
-
-"""
-def z(val: float) -> float:
-    ai_val = ai(val)
-    ac_val = ac(val)
-    e_val = e(val)
-    af_val = af(val)
-    i_val = i(val)
-    ag_val = ag(val)
-    return math.atan2(math.atan2(math.hypot(operator.sub(math.hypot(ai_val, ac_val), e_val), af_val), i_val), ag_val)
-"""
 
 def synthesize_plain_body(
     outgoing: list[str],
@@ -478,11 +431,6 @@ def build_starter_code(dag_data: list, seed: int, multi_line: bool = False, task
 import random
 import string
 import sys
-
-
-# Assumes sample_operator is available in this module's environment.
-# If not, import it here.
-# from data.tasks.function.operators import sample_operator
 
 
 # ---------------------------------------------------------------------
