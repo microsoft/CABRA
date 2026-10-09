@@ -7,7 +7,8 @@ This repository contains the code, tasks, experiment configurations, and analysi
 
 > Code Understanding is a Bottleneck for Coding Agents</br>
 > Nishant Balepur, Kiran Tomlinson, and Tobias Schnabel</br>
-> 2026
+> arXiv, 2026</br>
+> https://arxiv.org/abs/2610.10610
 
 
 
@@ -286,7 +287,15 @@ Between running our original and sandboxed runs, the Copilot CLI changed how tok
 ## 📚 Citation
 
 ```bibtex
-Coming Soon :) 🐐🐐🐐
+@misc{balepur2026codeunderstanding,
+      title={Code Understanding is a Bottleneck for Coding Agents}, 
+      author={Nishant Balepur and Kiran Tomlinson and Tobias Schnabel},
+      year={2026},
+      eprint={2610.10610},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2610.10610}, 
+}
 ```
 
 ## License
